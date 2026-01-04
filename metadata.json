@@ -1,0 +1,9 @@
+
+{
+  "name": "FLIXA - The Future of Cinema",
+  "description": "Premium cinematic experience with AI integration and Owner-driven content management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
