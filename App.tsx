@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { onAuthStateChanged, User, auth } from './firebase';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import MovieDetail from './pages/MovieDetail';
-import { onAuthStateChanged, User, auth } from './firebase';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -21,29 +20,28 @@ const App: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-6">
-        <div className="relative">
-           <div className="w-20 h-20 border-4 border-rose-600/20 border-t-rose-600 rounded-full animate-spin"></div>
-           <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-10 h-10 bg-rose-600 rounded-lg animate-pulse"></div>
-           </div>
+      <div className="fixed inset-0 bg-[#030712] flex items-center justify-center z-[999]">
+        <div className="flex flex-col items-center gap-6">
+          <div className="w-16 h-16 border-4 border-rose-600/20 border-t-rose-600 rounded-full animate-spin"></div>
+          <h1 className="text-4xl font-black brand-font tracking-tighter animate-pulse">
+            FLIX<span className="text-rose-600">A</span>
+          </h1>
         </div>
-        <span className="text-rose-600 font-black tracking-[0.4em] text-2xl animate-pulse">FLIXA</span>
       </div>
     );
   }
 
   return (
     <Router>
-      <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-rose-600 selection:text-white">
+      <div className="flex-1 flex flex-col bg-[#030712] selection:bg-rose-600 selection:text-white">
         <Navbar user={user} />
-        <div className="min-h-[70vh]">
+        <main className="flex-1 min-h-[80vh]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movie/:id" element={<MovieDetail />} />
             <Route path="/search" element={<Home />} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>

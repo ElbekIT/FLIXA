@@ -1,31 +1,29 @@
-
 import React from 'react';
-import { Clapperboard } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 border-t border-white/5 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex items-center justify-center space-x-3 mb-8">
-          <div className="bg-rose-600 p-2 rounded-xl">
-            <Clapperboard className="text-white w-6 h-6" />
-          </div>
-          <span className="text-3xl font-black tracking-tighter text-white uppercase italic">
+    <footer className="bg-[#030712] border-t border-white/5 py-20 mt-20">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 text-center">
+        <div className="flex flex-col items-center gap-6 mb-12">
+          <h2 className="text-4xl lg:text-6xl font-black brand-font italic uppercase tracking-tighter">
             FLIX<span className="text-rose-600">A</span>
-          </span>
+          </h2>
+          <p className="max-w-xl text-slate-500 text-lg font-medium leading-relaxed">
+            Premium online kinoteatr. Siz uchun maxsus tanlangan 
+            eng so'nggi filmlar va seriallar olami.
+          </p>
         </div>
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-10 font-medium">
-          Eng so'nggi va sara filmlar online kinoteatri. 
-          Siz uchun maxsus saralangan premium kontentlar faqat FLIXA platformasida.
-        </p>
-        <div className="flex flex-wrap justify-center gap-10 text-sm font-black text-slate-400 mb-12 uppercase tracking-widest">
-          <a href="#" className="hover:text-rose-500 transition-colors">Yordam</a>
-          <a href="#" className="hover:text-rose-500 transition-colors">Xavfsizlik</a>
-          <a href="#" className="hover:text-rose-500 transition-colors">Kinoqidiruv</a>
-          <a href="#" className="hover:text-rose-500 transition-colors">Telegram Bot</a>
+        
+        <div className="flex flex-wrap justify-center gap-10 text-xs font-black text-slate-400 uppercase tracking-widest border-b border-white/5 pb-12">
+          <Link to="/" className="hover:text-rose-600">Yordam</Link>
+          <Link to="/" className="hover:text-rose-600">Xavfsizlik</Link>
+          <Link to="/" className="hover:text-rose-600">Maxfiylik</Link>
+          <Link to="/" className="hover:text-rose-600">Telegram Bot</Link>
         </div>
-        <div className="pt-10 border-t border-white/5 text-[10px] text-slate-600 font-bold uppercase tracking-[0.3em]">
-          &copy; {new Date().getFullYear()} FLIXA MEDIA GROUP. BARCHA HUQUQLAR HIMOYA OSTIDA.
+        
+        <div className="pt-12 text-[10px] font-black text-slate-700 uppercase tracking-[0.5em]">
+          &copy; {new Date().getFullYear()} FLIXA PLATFORMASI. BARCHA HUQUQLAR HIMOYA QILINGAN.
         </div>
       </div>
     </footer>
