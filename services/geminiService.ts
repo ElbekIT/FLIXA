@@ -10,7 +10,9 @@ export const getMovieRecommendations = async (genre: string) => {
       model: "gemini-3-flash-preview",
       contents: `Tavsiya qiling: ${genre} janridagi 3 ta mashhur kino nomini ro'yxat ko'rinishida bering. Faqat nomlarini.`,
       config: {
+        // As per guidelines: If maxOutputTokens is set, thinkingBudget must also be set.
         maxOutputTokens: 200,
+        thinkingConfig: { thinkingBudget: 100 },
       }
     });
     // Access the generated text directly from the response.text property.
