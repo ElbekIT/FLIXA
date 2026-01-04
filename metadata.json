@@ -1,9 +1,5 @@
-
 {
-  "name": "FLIXA - The Future of Cinema",
-  "description": "Premium cinematic experience with AI integration and Owner-driven content management.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "name": "UzMovi Pro",
+  "description": "A high-end cinematic streaming platform featuring advanced movie management, genre filtering, and Telegram-based video hosting logic, exclusively designed for a premium user experience.",
+  "requestFramePermissions": []
 }

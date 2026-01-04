@@ -2,35 +2,39 @@
 export interface Movie {
   id: string;
   title: string;
-  originalTitle: string;
-  poster: string;
-  genre: string[];
-  country: string;
+  posterUrl: string;
+  videoUrl: string; // Telegram link
+  genres: string[];
   year: number;
+  country: string;
   language: string;
   duration: string;
-  ageLimit: string;
+  ageRating: string;
   description: string;
-  telegramVideoUrl: string;
-  rating: number;
+  likes: number;
   views: number;
+  createdAt: number;
 }
 
-export interface UserProfile {
+export interface User {
   uid: string;
   displayName: string | null;
   email: string | null;
   photoURL: string | null;
+  role: 'user' | 'owner';
 }
 
-export enum Genre {
-  Jangari = "Jangari",
-  Drama = "Drama",
-  Komediya = "Komediya",
-  // Fixed: Identifier cannot contain a single quote. Renamed Qo'rqinchli to Qorqinchli.
-  Qorqinchli = "Qo'rqinchli",
-  Sarguzasht = "Sarguzasht",
-  Fantastika = "Fantastika",
-  Detektiv = "Detektiv",
-  Multfilm = "Multfilm"
-}
+export type Genre = 'Barchasi' | 'Jangari' | 'Komediya' | 'Dahshatli' | 'Fantastika' | 'Drama' | 'Sarguzasht' | 'Multfilm';
+
+export const GENRES: Genre[] = [
+  'Barchasi',
+  'Jangari',
+  'Komediya',
+  'Dahshatli',
+  'Fantastika',
+  'Drama',
+  'Sarguzasht',
+  'Multfilm'
+];
+
+export const OWNER_EMAIL = "qoriyevagavharoy@gmail.com";
